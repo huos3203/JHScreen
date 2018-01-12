@@ -65,6 +65,10 @@
 }
 
 - (void)playResultAction:(NSURL *)playUrl {
+    self.videoUrl = playUrl.path;
+    [self closeScreenCAPAction:nil];
+    return;
+    //录制完播放预览
     self.screenCAPResultV.hidden = NO;
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:playUrl];
     self.player = [AVPlayer playerWithPlayerItem:playerItem];

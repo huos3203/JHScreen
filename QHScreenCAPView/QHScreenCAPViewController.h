@@ -23,7 +23,7 @@
 @interface QHScreenCAPViewController : UIViewController
 
 @property (nonatomic, weak) id<QHScreenCAPViewControllerDelegate> delegate;
-
-- (void)playResultAction:(NSURL *)playUrl;
+@property (nonatomic, strong) NSString *videoUrl;
+-(void)playResultAction:(NSURL *)playUrl;
 
 @end

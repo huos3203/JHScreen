@@ -19,6 +19,7 @@
 @interface QHScreenCAPManager : NSObject
 
 @property (nonatomic, weak) id<QHScreenCAPManagerDelegate> delegate;
+@property (nonatomic, strong) NSString *videoUrl;
 
 + (QHScreenCAPManager *)createScreenCAPManager;
 

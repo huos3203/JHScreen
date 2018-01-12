@@ -270,16 +270,12 @@
         
         CVPixelBufferRef pixelBuffer = NULL;
         CGContextRef bitmapContext = [self createPixelBufferAndBitmapContext:&pixelBuffer];
-        
-        if (self.delegate) {
-            if ([self.delegate respondsToSelector:@selector(writeBackgroundFrameInContext:)] == YES) {
-                [self.delegate writeBackgroundFrameInContext:&bitmapContext];
-            }
-        }
+    
         // draw each window into the context (other windows include UIKeyboard, UIAlert)
         // FIX: UIKeyboard is currently only rendered correctly in portrait orientation
         dispatch_sync(dispatch_get_main_queue(), ^{
-            UIGraphicsPushContext(bitmapContext); {
+            UIGraphicsPushContext(bitmapContext);
+            {
                 if ([self.delegate respondsToSelector:@selector(screenRecordWindow)] == YES) {
                     UIWindow *window = [self.delegate screenRecordWindow];
                     [window drawViewHierarchyInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height) afterScreenUpdates:NO];
@@ -289,9 +285,14 @@
                         [window drawViewHierarchyInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height) afterScreenUpdates:NO];
                     }
                 }
-            } UIGraphicsPopContext();
+            }
+            UIGraphicsPopContext();
         });
-        
+        if (self.delegate) {
+            if ([self.delegate respondsToSelector:@selector(writeBackgroundFrameInContext:)] == YES) {
+                [self.delegate writeBackgroundFrameInContext:&bitmapContext];
+            }
+        }
         // append pixelBuffer on a async dispatch_queue, the next frame is rendered whilst this one appends
         // must not overwhelm the queue with pixelBuffers, therefore:
         // check if _append_pixelBuffer_queue is ready
