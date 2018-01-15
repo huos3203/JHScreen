@@ -18,12 +18,15 @@
 
 - (void)closeScreenCAP:(QHScreenCAPViewController *)vc;
 
+- (void)getScreenshotsCAP:(QHScreenCAPViewController *)vc;
+
+- (void)toBackCAP:(QHScreenCAPViewController *)vc;
 @end
 
 @interface QHScreenCAPViewController : UIViewController
 
 @property (nonatomic, weak) id<QHScreenCAPViewControllerDelegate> delegate;
-@property (nonatomic, strong) NSString *videoUrl;
 -(void)playResultAction:(NSURL *)playUrl;
+@property (weak, nonatomic) IBOutlet UILabel *ibAlertMessageLabel;
 
 @end

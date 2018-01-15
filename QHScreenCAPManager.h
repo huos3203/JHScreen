@@ -13,7 +13,10 @@
 @protocol QHScreenCAPManagerDelegate <NSObject>
 
 - (void)closeScreenCAPManager:(QHScreenCAPManager *)manager;
+- (void)getScreenshotsCAP:(QHScreenCAPManager *)manager;
 
+- (void)startRecordCAP:(BOOL)isRecording;
+- (void)toBackCAP:(QHScreenCAPManager *)vc;
 @end
 
 @interface QHScreenCAPManager : NSObject

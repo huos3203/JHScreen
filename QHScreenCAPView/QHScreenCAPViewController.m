@@ -13,6 +13,9 @@
 @interface QHScreenCAPViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *startScreenCAPButton;
+@property (weak, nonatomic) IBOutlet UIButton *ibScreenShotsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *ibBackBtn;
+
 
 @property (weak, nonatomic) IBOutlet UIView *screenCAPResultV;
 @property (weak, nonatomic) IBOutlet UIView *playerV;
@@ -33,41 +36,64 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.startScreenCAPButton.layer setBorderWidth:0];
+    [self.startScreenCAPButton.layer setMasksToBounds:YES];
+    [self.startScreenCAPButton.layer setCornerRadius:self.startScreenCAPButton.bounds.size.width/2];
+    
+    [self.ibAlertMessageLabel.layer setBorderWidth:0];
+    [self.ibAlertMessageLabel.layer setMasksToBounds:YES];
+    [self.ibAlertMessageLabel.layer setCornerRadius:15];
 }
 
 #pragma mark - Action
 
+//重新录屏
 - (IBAction)restartScreenCAPAction:(id)sender {
     [self.delegate restartScreenCAP:self];
     self.startScreenCAPButton.selected = YES;
     [self.startScreenCAPButton setBackgroundColor:[UIColor greenColor]];
 }
 
+- (IBAction)ibBackAction:(id)sender {
+    [self.delegate toBackCAP:self];
+}
+
+
+//开始录屏
 - (IBAction)startScreenCAPAction:(id)sender {
+    [_ibScreenShotsBtn setHidden:YES];
     BOOL bRecording = [self.delegate startScreenCAP:self];
     self.startScreenCAPButton.selected = bRecording;
     if (bRecording == YES) {
-        [self.startScreenCAPButton setBackgroundColor:[UIColor greenColor]];
+        [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
     }
     else {
         [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
     }
 }
-
+//关闭录屏
 - (IBAction)closeScreenCAPAction:(id)sender {
     [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
     [self.delegate closeScreenCAP:self];
 }
 
+//截屏
+- (IBAction)getScreenshotsCAPAction:(id)sender {
+    [self.delegate getScreenshotsCAP:self];
+}
+
+//关闭录屏视频预览播放器
 - (IBAction)closeScreenCAPResultAction:(id)sender {
     [self.player pause];
     self.screenCAPResultV.hidden = YES;
 }
 
+//完成录屏，并预览播放视频
 - (void)playResultAction:(NSURL *)playUrl {
-    self.videoUrl = playUrl.path;
     [self closeScreenCAPAction:nil];
     return;
+    
+    
     //录制完播放预览
     self.screenCAPResultV.hidden = NO;
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:playUrl];
@@ -78,4 +104,10 @@
     [self.player play];
 }
 
+
+//不支持旋转
+-(BOOL)shouldAutorotate
+{
+    return NO;
+}
 @end

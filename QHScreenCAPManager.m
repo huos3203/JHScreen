@@ -114,6 +114,7 @@
         recorder.videoURL = [self videoTempFileURL];
         [recorder startRecording];
     }
+    [self.delegate startRecordCAP:recorder.isRecording];
     return recorder.isRecording;
 }
 
@@ -129,6 +130,25 @@
         
         [strongSelf.delegate closeScreenCAPManager:strongSelf];
     }];
+}
+
+
+- (void)getScreenshotsCAP:(QHScreenCAPViewController *)vc {
+    [self.delegate getScreenshotsCAP:self];
+}
+
+- (void)toBackCAP:(QHScreenCAPViewController *)vc
+{
+    ASScreenRecorder *recorder = [ASScreenRecorder sharedInstance];
+    if (recorder.isRecording) {
+        
+        vc.ibAlertMessageLabel.alpha = 1;
+        [UIView animateWithDuration:3.0 animations:^{
+            vc.ibAlertMessageLabel.alpha = 0;
+        }];
+    }
+    
+    [self.delegate toBackCAP:self];
 }
 
 @end
