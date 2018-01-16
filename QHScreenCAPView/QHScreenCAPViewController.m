@@ -61,14 +61,15 @@
 
 //开始录屏
 - (IBAction)startScreenCAPAction:(id)sender {
-    [_ibScreenShotsBtn setHidden:YES];
     BOOL bRecording = [self.delegate startScreenCAP:self];
     self.startScreenCAPButton.selected = bRecording;
     if (bRecording == YES) {
+//        [_ibScreenShotsBtn setHidden:YES];
         [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
     }
     else {
-        [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
+//        [_ibScreenShotsBtn setHidden:NO];
+        [self.startScreenCAPButton setBackgroundColor:[UIColor clearColor]];
     }
 }
 //关闭录屏

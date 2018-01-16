@@ -15,7 +15,7 @@
 - (void)closeScreenCAPManager:(QHScreenCAPManager *)manager;
 - (void)getScreenshotsCAP:(QHScreenCAPManager *)manager;
 
-- (void)startRecordCAP:(BOOL)isRecording;
+- (void)startRecordCAP:(BOOL)isFinished;
 - (void)toBackCAP:(QHScreenCAPManager *)vc;
 @end
 
@@ -25,5 +25,5 @@
 @property (nonatomic, strong) NSString *videoUrl;
 
 + (QHScreenCAPManager *)createScreenCAPManager;
-- (void)stopRecordCAP;
+- (void)closeScreenRecord;
 @end

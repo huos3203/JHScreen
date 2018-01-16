@@ -104,21 +104,21 @@
         [recorder stopRecordingWithCompletion:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (recorder.videoURL != nil) {
-                [strongSelf.screenCAPVC playResultAction:recorder.videoURL];
+//                [strongSelf.screenCAPVC playResultAction:recorder.videoURL];
+                [strongSelf.delegate startRecordCAP:YES];
             }
         }];
     } else {
         
         //!!!这句注释后就不会出预览的录屏结果，而是将录屏结果保存到相册里面
-        
+        [self.delegate startRecordCAP:NO];
         recorder.videoURL = [self videoTempFileURL];
         [recorder startRecording];
     }
-    [self.delegate startRecordCAP:recorder.isRecording];
     return recorder.isRecording;
 }
 
-- (void)stopRecordCAP
+- (void)closeScreenRecord
 {
     ASScreenRecorder *recorder = [ASScreenRecorder sharedInstance];
     if (recorder.isRecording) {
@@ -126,10 +126,11 @@
         [recorder stopRecordingWithCompletion:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (recorder.videoURL != nil) {
-                [strongSelf.screenCAPVC playResultAction:recorder.videoURL];
+                [strongSelf.delegate startRecordCAP:YES];
             }
         }];
     }
+    [self closeScreenCAP:nil];
 }
 
 - (void)closeScreenCAP:(QHScreenCAPViewController *)vc {
