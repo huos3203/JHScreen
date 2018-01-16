@@ -25,5 +25,5 @@
 @property (nonatomic, strong) NSString *videoUrl;
 
 + (QHScreenCAPManager *)createScreenCAPManager;
-
+- (void)stopRecordCAP;
 @end

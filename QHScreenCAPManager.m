@@ -118,6 +118,20 @@
     return recorder.isRecording;
 }
 
+- (void)stopRecordCAP
+{
+    ASScreenRecorder *recorder = [ASScreenRecorder sharedInstance];
+    if (recorder.isRecording) {
+        __weak typeof(self) weakSelf = self;
+        [recorder stopRecordingWithCompletion:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (recorder.videoURL != nil) {
+                [strongSelf.screenCAPVC playResultAction:recorder.videoURL];
+            }
+        }];
+    }
+}
+
 - (void)closeScreenCAP:(QHScreenCAPViewController *)vc {
     __weak typeof(self) weakSelf = self;
     ASScreenRecorder *recorder = [ASScreenRecorder sharedInstance];
