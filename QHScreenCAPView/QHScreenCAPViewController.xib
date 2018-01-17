@@ -14,6 +14,7 @@
                 <outlet property="ibAlertMessageLabel" destination="czw-NF-9LZ" id="CdW-pe-nba"/>
                 <outlet property="ibBackBtn" destination="iUa-iU-XWb" id="PEu-J6-eJr"/>
                 <outlet property="ibScreenShotsBtn" destination="NM2-DA-aPz" id="3kj-5g-II8"/>
+                <outlet property="ibShowTimeLabel" destination="vSP-RP-RCA" id="fVI-Zh-BwS"/>
                 <outlet property="startScreenCAPButton" destination="dIx-6u-27E" id="CFn-ao-fHT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="8D2-AQ-HlJ"/>
             </connections>
@@ -54,20 +55,28 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-RP-RCA">
+                    <rect key="frame" x="649.33333333333348" y="346.33333333333331" width="26.666666666666629" height="20.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.04831934199" blue="0.2135689516" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="iUa-iU-XWb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="5uX-TM-15h"/>
+                <constraint firstItem="dIx-6u-27E" firstAttribute="leading" secondItem="vSP-RP-RCA" secondAttribute="trailing" constant="5" id="JhR-Z6-bva"/>
                 <constraint firstAttribute="trailing" secondItem="NM2-DA-aPz" secondAttribute="trailing" constant="20" id="Ydz-Ip-TSH"/>
                 <constraint firstItem="czw-NF-9LZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dsZ-O2-mky"/>
                 <constraint firstItem="czw-NF-9LZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="j2A-CL-r3Z"/>
                 <constraint firstItem="NM2-DA-aPz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qNd-eH-WRs"/>
                 <constraint firstAttribute="trailing" secondItem="dIx-6u-27E" secondAttribute="trailing" constant="20" id="qsq-At-nOm"/>
+                <constraint firstItem="vSP-RP-RCA" firstAttribute="centerY" secondItem="dIx-6u-27E" secondAttribute="centerY" id="t7y-tD-j8U"/>
                 <constraint firstItem="iUa-iU-XWb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="wbq-sE-b0G"/>
                 <constraint firstAttribute="bottom" secondItem="dIx-6u-27E" secondAttribute="bottom" constant="40" id="znu-hk-tuB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="34.5" y="60.5"/>
+            <point key="canvasLocation" x="34" y="60"/>
         </view>
     </objects>
     <resources>

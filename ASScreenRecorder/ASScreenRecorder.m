@@ -156,18 +156,18 @@
     CGAffineTransform videoTransform;
     switch ([UIDevice currentDevice].orientation) {
         case UIDeviceOrientationLandscapeLeft:
-            videoTransform = CGAffineTransformMakeRotation(-M_PI_2);
+            videoTransform = CGAffineTransformMakeRotation(-M_PI);
             break;
         case UIDeviceOrientationLandscapeRight:
-            videoTransform = CGAffineTransformMakeRotation(M_PI_2);
-            break;
-        case UIDeviceOrientationPortraitUpsideDown:
             videoTransform = CGAffineTransformMakeRotation(M_PI);
+            break;
+        case UIDeviceOrientationPortraitUpsideDown: case UIDeviceOrientationFaceUp:
+            videoTransform = CGAffineTransformMakeRotation(M_PI_2);
             break;
         default:
             videoTransform = CGAffineTransformIdentity;
     }
-    return videoTransform;
+    return CGAffineTransformIdentity;
 }
 
 - (NSURL*)tempFileURL

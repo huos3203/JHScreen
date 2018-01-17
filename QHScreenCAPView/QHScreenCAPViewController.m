@@ -10,6 +10,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 
+#import "NSTimer+EOCBlocksSupport.h"
+
 @interface QHScreenCAPViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *startScreenCAPButton;
@@ -23,6 +25,10 @@
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 
+
+@property (nonatomic, strong) NSTimer *showTimer;
+@property (weak, nonatomic) IBOutlet UILabel *ibShowTimeLabel;
+@property (nonatomic) NSUInteger timeCount;
 @end
 
 @implementation QHScreenCAPViewController
@@ -58,18 +64,41 @@
     [self.delegate toBackCAP:self];
 }
 
+-(void)createTimer
+{
+    self.timeCount = 11;
+
+    __weak typeof(self) weakSelf = self;
+    self.showTimer = [NSTimer eoc_scheduledTimerWithTimeInterval:1 block:^{
+        weakSelf.timeCount--;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.ibShowTimeLabel.text = [NSString stringWithFormat:@"%lus", (unsigned long)weakSelf.timeCount];
+            if (weakSelf.timeCount == 0) {
+                [weakSelf startScreenCAPAction:nil];
+            }
+        });
+    } repeats:YES];
+    [self.showTimer fire];
+    
+}
 
 //开始录屏
 - (IBAction)startScreenCAPAction:(id)sender {
     BOOL bRecording = [self.delegate startScreenCAP:self];
     self.startScreenCAPButton.selected = bRecording;
     if (bRecording == YES) {
-//        [_ibScreenShotsBtn setHidden:YES];
+        //开始录屏
         [self.startScreenCAPButton setBackgroundColor:[UIColor redColor]];
+        [self createTimer];
+        [_ibShowTimeLabel setHidden:YES];
     }
     else {
-//        [_ibScreenShotsBtn setHidden:NO];
+        //完成录屏
         [self.startScreenCAPButton setBackgroundColor:[UIColor clearColor]];
+        [_ibShowTimeLabel setHidden:YES];
+        _ibShowTimeLabel.text = @"0";
+        [self.showTimer invalidate];
+        self.showTimer = nil;
     }
 }
 //关闭录屏
@@ -91,6 +120,10 @@
 
 //完成录屏，并预览播放视频
 - (void)playResultAction:(NSURL *)playUrl {
+    if (self.showTimer) {
+        [self.showTimer invalidate];
+        self.showTimer = nil;
+    }
     [self closeScreenCAPAction:nil];
     return;
     
@@ -105,10 +138,14 @@
     [self.player play];
 }
 
-
+//支持的方向
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft;
+}
 //不支持旋转
 -(BOOL)shouldAutorotate
 {
-    return NO;
+    return !self.startScreenCAPButton.selected;
 }
 @end

@@ -130,7 +130,7 @@
             }
         }];
     }
-    [self closeScreenCAP:nil];
+    [self.screenCAPVC playResultAction:recorder.videoURL];
 }
 
 - (void)closeScreenCAP:(QHScreenCAPViewController *)vc {
