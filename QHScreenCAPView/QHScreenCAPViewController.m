@@ -146,6 +146,6 @@
 //不支持旋转
 -(BOOL)shouldAutorotate
 {
-    return !self.startScreenCAPButton.selected;
+    return NO;//!self.startScreenCAPButton.selected;
 }
 @end
