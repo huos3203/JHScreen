@@ -138,11 +138,6 @@
     [self.player play];
 }
 
-//支持的方向
--(UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft;
-}
 //不支持旋转
 -(BOOL)shouldAutorotate
 {

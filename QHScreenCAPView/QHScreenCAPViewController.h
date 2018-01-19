@@ -10,6 +10,12 @@
 
 @class QHScreenCAPViewController;
 
+typedef enum : NSUInteger {
+    ISRecording,
+    ISSuccessed,
+    ISFail,
+} RecordStatus;
+
 @protocol QHScreenCAPViewControllerDelegate <NSObject>
 
 - (void)restartScreenCAP:(QHScreenCAPViewController *)vc;

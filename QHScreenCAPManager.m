@@ -104,8 +104,16 @@
         [recorder stopRecordingWithCompletion:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (recorder.videoURL != nil) {
-//                [strongSelf.screenCAPVC playResultAction:recorder.videoURL];
-                [strongSelf.delegate startRecordCAP:YES];
+                if ([self getVideoInfoWithSourcePath:recorder.videoURL.path] > 0) {
+                    [strongSelf.delegate startRecordCAP:YES];
+                }
+                else{
+                    vc.ibAlertMessageLabel.alpha = 1;
+                    vc.ibAlertMessageLabel.text = @"视频录制失败！";
+                    [UIView animateWithDuration:3.0 animations:^{
+                        vc.ibAlertMessageLabel.alpha = 0;
+                    }];
+                }
             }
         }];
     } else {
@@ -116,6 +124,23 @@
         [recorder startRecording];
     }
     return recorder.isRecording;
+}
+/**
+ * @method
+ *
+ * @brief 根据路径获取视频时长和大小
+ * @param path       视频路径
+ * @return    字典    @"size"－－文件大小   @"duration"－－视频时长
+ */
+- (int)getVideoInfoWithSourcePath:(NSString *)path{
+    AVURLAsset * asset = [AVURLAsset assetWithURL:[NSURL fileURLWithPath:path]];
+    CMTime   time = [asset duration];
+    int seconds = ceil(time.value/time.timescale);
+    
+    NSInteger   fileSize = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil].fileSize;
+    
+//    return @{@"size" : @(fileSize), @"duration" : @(seconds)};
+    return seconds;
 }
 
 - (void)closeScreenRecord
@@ -158,6 +183,7 @@
     if (recorder.isRecording) {
         
         vc.ibAlertMessageLabel.alpha = 1;
+        vc.ibAlertMessageLabel.text = @"正在录制视频...";
         [UIView animateWithDuration:3.0 animations:^{
             vc.ibAlertMessageLabel.alpha = 0;
         }];
