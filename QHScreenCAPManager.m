@@ -11,12 +11,15 @@
 #import "ASScreenRecorder.h"
 
 #import "QHScreenCAPViewController.h"
+#import "QHContentViewController.h"
 
 @interface QHScreenCAPManager () <QHScreenCAPViewControllerDelegate, ASScreenRecorderDelegate>
 
 @property (nonatomic, strong) UIWindow *screenCAPWindow;
+@property (nonatomic, strong) UIWindow *contentCAPWindow;
 
 @property (nonatomic, strong) QHScreenCAPViewController *screenCAPVC;
+@property (nonatomic, strong) QHContentViewController *contentCAPVC;
 
 @end
 
@@ -27,11 +30,25 @@
     
     self.screenCAPWindow = nil;
     self.screenCAPVC = nil;
+    self.contentCAPWindow = nil;
+    self.contentCAPVC = nil;
 }
 
-+ (QHScreenCAPManager *)createScreenCAPManager {
++ (QHScreenCAPManager *)createScreenCAPManager:(id)contentView {
     QHScreenCAPManager *manager = [[QHScreenCAPManager alloc] init];
     
+    //内屏
+    manager.contentCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    QHContentViewController *contentvc = [[QHContentViewController alloc] initWithContentView:(UIView *)contentView];
+    [contentvc viewDidLoad];
+    manager.contentCAPVC = contentvc;
+    manager.contentCAPWindow.rootViewController = manager.screenCAPVC;
+    manager.contentCAPWindow.windowLevel = UIWindowLevelNormal;
+    [manager.contentCAPWindow makeKeyAndVisible];
+    
+    
+
+    //录屏
     manager.screenCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //加载方式不同
     //initWithNibName方法：是延迟加载，这个View上的控件是 nil 的，只有到 需要显示时，才会不是 nil
