@@ -46,7 +46,6 @@
     manager.contentCAPWindow.windowLevel = UIWindowLevelNormal;
     [manager.contentCAPWindow makeKeyAndVisible];
     
-    
 
     //录屏
     manager.screenCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
