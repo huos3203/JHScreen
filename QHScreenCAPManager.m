@@ -13,6 +13,8 @@
 #import "QHScreenCAPViewController.h"
 #import "QHContentViewController.h"
 
+#import "AppDelegate.h"
+
 @interface QHScreenCAPManager () <QHScreenCAPViewControllerDelegate, ASScreenRecorderDelegate>
 
 @property (nonatomic, strong) UIWindow *screenCAPWindow;
@@ -24,6 +26,9 @@
 @end
 
 @implementation QHScreenCAPManager
+{
+    BOOL isFullPlay;
+}
 
 - (void)dealloc {
     NSLog(@"%s", __FUNCTION__);
@@ -35,8 +40,14 @@
 }
 
 + (QHScreenCAPManager *)createScreenCAPManager:(id)contentView {
-    QHScreenCAPManager *manager = [[QHScreenCAPManager alloc] init];
     
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.allowRotate = YES;
+    
+    
+    QHScreenCAPManager *manager = [[QHScreenCAPManager alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [manager fullClick:nil];
     //内屏
     manager.contentCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     QHContentViewController *contentvc = [[QHContentViewController alloc] initWithContentView:(UIView *)contentView];
@@ -65,7 +76,6 @@
     recorder.delegate = manager;
     
     [manager.screenCAPWindow makeKeyAndVisible];
-    
     return manager;
 }
 
@@ -204,8 +214,47 @@
             vc.ibAlertMessageLabel.alpha = 0;
         }];
     }
-    
+    [self fullClick:nil];
     [self.delegate toBackCAP:self];
+}
+
+
+- (void)fullClick:(id)sender{
+    //此方案为转屏
+    if (isFullPlay == NO) {
+        isFullPlay = YES;
+        
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationLandscapeRight;//这里可以改变旋转的方向
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    } else {
+        isFullPlay = NO;
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;//这里可以改变旋转的方向
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }
+}
+- (void)orientChange:(NSNotification *)noti {
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
+        isFullPlay = YES;
+    }else{
+        if (orientation == UIDeviceOrientationPortrait) {
+            isFullPlay = NO;
+        }
+    }
 }
 
 @end
