@@ -11,54 +11,27 @@
 #import "ASScreenRecorder.h"
 
 #import "QHScreenCAPViewController.h"
-#import "QHContentViewController.h"
-
-#import "AppDelegate.h"
 
 @interface QHScreenCAPManager () <QHScreenCAPViewControllerDelegate, ASScreenRecorderDelegate>
 
 @property (nonatomic, strong) UIWindow *screenCAPWindow;
-@property (nonatomic, strong) UIWindow *contentCAPWindow;
 
 @property (nonatomic, strong) QHScreenCAPViewController *screenCAPVC;
-@property (nonatomic, strong) QHContentViewController *contentCAPVC;
 
 @end
 
 @implementation QHScreenCAPManager
-{
-    BOOL isFullPlay;
-}
 
 - (void)dealloc {
     NSLog(@"%s", __FUNCTION__);
     
     self.screenCAPWindow = nil;
     self.screenCAPVC = nil;
-    self.contentCAPWindow = nil;
-    self.contentCAPVC = nil;
 }
 
-+ (QHScreenCAPManager *)createScreenCAPManager:(id)contentView {
-    
-    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    delegate.allowRotate = YES;
-    
-    
++ (QHScreenCAPManager *)createScreenCAPManager {
     QHScreenCAPManager *manager = [[QHScreenCAPManager alloc] init];
-    [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
-    [manager fullClick:nil];
-    //内屏
-    manager.contentCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    QHContentViewController *contentvc = [[QHContentViewController alloc] initWithContentView:(UIView *)contentView];
-    [contentvc viewDidLoad];
-    manager.contentCAPVC = contentvc;
-    manager.contentCAPWindow.rootViewController = manager.screenCAPVC;
-    manager.contentCAPWindow.windowLevel = UIWindowLevelNormal;
-    [manager.contentCAPWindow makeKeyAndVisible];
     
-
-    //录屏
     manager.screenCAPWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //加载方式不同
     //initWithNibName方法：是延迟加载，这个View上的控件是 nil 的，只有到 需要显示时，才会不是 nil
@@ -76,6 +49,7 @@
     recorder.delegate = manager;
     
     [manager.screenCAPWindow makeKeyAndVisible];
+    
     return manager;
 }
 
@@ -214,47 +188,8 @@
             vc.ibAlertMessageLabel.alpha = 0;
         }];
     }
-    [self fullClick:nil];
+    
     [self.delegate toBackCAP:self];
-}
-
-
-- (void)fullClick:(id)sender{
-    //此方案为转屏
-    if (isFullPlay == NO) {
-        isFullPlay = YES;
-        
-        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-            SEL selector = NSSelectorFromString(@"setOrientation:");
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-            [invocation setSelector:selector];
-            [invocation setTarget:[UIDevice currentDevice]];
-            int val = UIInterfaceOrientationLandscapeRight;//这里可以改变旋转的方向
-            [invocation setArgument:&val atIndex:2];
-            [invocation invoke];
-        }
-    } else {
-        isFullPlay = NO;
-        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-            SEL selector = NSSelectorFromString(@"setOrientation:");
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-            [invocation setSelector:selector];
-            [invocation setTarget:[UIDevice currentDevice]];
-            int val = UIInterfaceOrientationPortrait;//这里可以改变旋转的方向
-            [invocation setArgument:&val atIndex:2];
-            [invocation invoke];
-        }
-    }
-}
-- (void)orientChange:(NSNotification *)noti {
-    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
-        isFullPlay = YES;
-    }else{
-        if (orientation == UIDeviceOrientationPortrait) {
-            isFullPlay = NO;
-        }
-    }
 }
 
 @end

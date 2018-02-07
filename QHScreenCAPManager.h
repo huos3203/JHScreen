@@ -24,6 +24,7 @@
 @property (nonatomic, weak) id<QHScreenCAPManagerDelegate> delegate;
 @property (nonatomic, strong) NSString *videoUrl;
 
-+ (QHScreenCAPManager *)createScreenCAPManager:(id)contentView;
++ (QHScreenCAPManager *)createScreenCAPManager;
+//+ (QHScreenCAPManager *)createScreenCAPManager:(id)contentView;
 - (void)closeScreenRecord;
 @end
