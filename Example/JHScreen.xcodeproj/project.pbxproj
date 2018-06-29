@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E80A1120E5D0C40099B64B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0120E5D0C30099B64B /* .gitkeep */; };
+		05E80A1220E5D0C40099B64B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0320E5D0C30099B64B /* .gitkeep */; };
+		05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */; };
+		05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */; };
+		05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0C20E5D0C30099B64B /* QHContentViewController.m */; };
+		05E80A1620E5D0C40099B64B /* QHScreenCAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0E20E5D0C30099B64B /* QHScreenCAPViewController.m */; };
+		05E80A1720E5D0C40099B64B /* QHScreenCAPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0F20E5D0C30099B64B /* QHScreenCAPViewController.xib */; };
+		05E80A1820E5D0C40099B64B /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A1020E5D0C30099B64B /* ReplaceMe.m */; };
+		05E80A1C20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A1B20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m */; };
 		3A40A5DE5987E1C35BD6130F /* Pods_JHScreen_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C172E2095AEC7AAF17ABF74 /* Pods_JHScreen_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -37,6 +46,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05E80A0120E5D0C30099B64B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		05E80A0320E5D0C30099B64B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		05E80A0620E5D0C30099B64B /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
+		05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
+		05E80A0820E5D0C30099B64B /* QHScreenCAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPManager.h; sourceTree = "<group>"; };
+		05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHScreenCAPManager.m; sourceTree = "<group>"; };
+		05E80A0B20E5D0C30099B64B /* QHContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHContentViewController.h; sourceTree = "<group>"; };
+		05E80A0C20E5D0C30099B64B /* QHContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHContentViewController.m; sourceTree = "<group>"; };
+		05E80A0D20E5D0C30099B64B /* QHScreenCAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPViewController.h; sourceTree = "<group>"; };
+		05E80A0E20E5D0C30099B64B /* QHScreenCAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHScreenCAPViewController.m; sourceTree = "<group>"; };
+		05E80A0F20E5D0C30099B64B /* QHScreenCAPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHScreenCAPViewController.xib; sourceTree = "<group>"; };
+		05E80A1020E5D0C30099B64B /* ReplaceMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		05E80A1A20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EOCBlocksSupport.h"; sourceTree = "<group>"; };
+		05E80A1B20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EOCBlocksSupport.m"; sourceTree = "<group>"; };
 		31ABAF8F5E89F82960C9D3C9 /* Pods_JHScreen_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHScreen_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C172E2095AEC7AAF17ABF74 /* Pods_JHScreen_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHScreen_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56409041F4F25B9C62F81D3B /* Pods-JHScreen_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHScreen_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHScreen_Example/Pods-JHScreen_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,11 +83,11 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6DE585359F021644E8EAB59C /* Pods-JHScreen_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHScreen_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHScreen_Tests/Pods-JHScreen_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		703921E1157F48B9C09932E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		703921E1157F48B9C09932E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A72AF3DBF4A0697E8C3730D /* JHScreen.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = JHScreen.podspec; path = ../JHScreen.podspec; sourceTree = "<group>"; };
-		AE1DAE327D2A476649C9B4A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8A72AF3DBF4A0697E8C3730D /* JHScreen.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = JHScreen.podspec; path = ../JHScreen.podspec; sourceTree = "<group>"; };
+		AE1DAE327D2A476649C9B4A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C6D5BFCA2A5C2C13292D1F6D /* Pods-JHScreen_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHScreen_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JHScreen_Tests/Pods-JHScreen_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CCEF520AD2DCB6F79307C1FA /* Pods-JHScreen_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHScreen_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JHScreen_Example/Pods-JHScreen_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,9 +118,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E809FF20E5D0C30099B64B /* JHScreen */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0020E5D0C30099B64B /* Assets */,
+				05E80A0220E5D0C30099B64B /* Classes */,
+			);
+			name = JHScreen;
+			path = ../JHScreen;
+			sourceTree = "<group>";
+		};
+		05E80A0020E5D0C30099B64B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0120E5D0C30099B64B /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		05E80A0220E5D0C30099B64B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0320E5D0C30099B64B /* .gitkeep */,
+				05E80A1920E5D7F30099B64B /* QHBase */,
+				05E80A0420E5D0C30099B64B /* QHScreen */,
+				05E80A1020E5D0C30099B64B /* ReplaceMe.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		05E80A0420E5D0C30099B64B /* QHScreen */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0520E5D0C30099B64B /* ASScreenRecorder */,
+				05E80A0820E5D0C30099B64B /* QHScreenCAPManager.h */,
+				05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */,
+				05E80A0A20E5D0C30099B64B /* QHScreenCAPView */,
+			);
+			path = QHScreen;
+			sourceTree = "<group>";
+		};
+		05E80A0520E5D0C30099B64B /* ASScreenRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0620E5D0C30099B64B /* ASScreenRecorder.h */,
+				05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */,
+			);
+			path = ASScreenRecorder;
+			sourceTree = "<group>";
+		};
+		05E80A0A20E5D0C30099B64B /* QHScreenCAPView */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A0B20E5D0C30099B64B /* QHContentViewController.h */,
+				05E80A0C20E5D0C30099B64B /* QHContentViewController.m */,
+				05E80A0D20E5D0C30099B64B /* QHScreenCAPViewController.h */,
+				05E80A0E20E5D0C30099B64B /* QHScreenCAPViewController.m */,
+				05E80A0F20E5D0C30099B64B /* QHScreenCAPViewController.xib */,
+			);
+			path = QHScreenCAPView;
+			sourceTree = "<group>";
+		};
+		05E80A1920E5D7F30099B64B /* QHBase */ = {
+			isa = PBXGroup;
+			children = (
+				05E80A1A20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.h */,
+				05E80A1B20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m */,
+			);
+			path = QHBase;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				05E809FF20E5D0C30099B64B /* JHScreen */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for JHScreen */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -248,6 +342,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "huo3203@hotmail.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 2C4H9T5RF5;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -279,6 +376,9 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				05E80A1120E5D0C40099B64B /* .gitkeep in Resources */,
+				05E80A1720E5D0C40099B64B /* QHScreenCAPViewController.xib in Resources */,
+				05E80A1220E5D0C40099B64B /* .gitkeep in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -381,8 +481,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* JHAppDelegate.m in Sources */,
+				05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */,
+				05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */,
 				6003F5A7195388D20070C39A /* JHViewController.m in Sources */,
+				05E80A1C20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m in Sources */,
+				05E80A1820E5D0C40099B64B /* ReplaceMe.m in Sources */,
+				05E80A1620E5D0C40099B64B /* QHScreenCAPViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +616,7 @@
 			baseConfigurationReference = 56409041F4F25B9C62F81D3B /* Pods-JHScreen_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2C4H9T5RF5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHScreen/JHScreen-Prefix.pch";
 				INFOPLIST_FILE = "JHScreen/JHScreen-Info.plist";
@@ -525,6 +632,7 @@
 			baseConfigurationReference = CCEF520AD2DCB6F79307C1FA /* Pods-JHScreen_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2C4H9T5RF5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHScreen/JHScreen-Prefix.pch";
 				INFOPLIST_FILE = "JHScreen/JHScreen-Info.plist";
