@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05E80A1120E5D0C40099B64B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0120E5D0C30099B64B /* .gitkeep */; };
-		05E80A1220E5D0C40099B64B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0320E5D0C30099B64B /* .gitkeep */; };
 		05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */; };
 		05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */; };
 		05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0C20E5D0C30099B64B /* QHContentViewController.m */; };
 		05E80A1620E5D0C40099B64B /* QHScreenCAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0E20E5D0C30099B64B /* QHScreenCAPViewController.m */; };
 		05E80A1720E5D0C40099B64B /* QHScreenCAPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E80A0F20E5D0C30099B64B /* QHScreenCAPViewController.xib */; };
-		05E80A1820E5D0C40099B64B /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A1020E5D0C30099B64B /* ReplaceMe.m */; };
 		05E80A1C20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A1B20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m */; };
+		05EB9DEA20E644B100146965 /* UIView+WaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EB9DE920E644B100146965 /* UIView+WaterMark.m */; };
 		3A40A5DE5987E1C35BD6130F /* Pods_JHScreen_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C172E2095AEC7AAF17ABF74 /* Pods_JHScreen_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -46,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05E80A0120E5D0C30099B64B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		05E80A0320E5D0C30099B64B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		05E80A0620E5D0C30099B64B /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 		05E80A0820E5D0C30099B64B /* QHScreenCAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPManager.h; sourceTree = "<group>"; };
@@ -57,9 +53,10 @@
 		05E80A0D20E5D0C30099B64B /* QHScreenCAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPViewController.h; sourceTree = "<group>"; };
 		05E80A0E20E5D0C30099B64B /* QHScreenCAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHScreenCAPViewController.m; sourceTree = "<group>"; };
 		05E80A0F20E5D0C30099B64B /* QHScreenCAPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHScreenCAPViewController.xib; sourceTree = "<group>"; };
-		05E80A1020E5D0C30099B64B /* ReplaceMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		05E80A1A20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EOCBlocksSupport.h"; sourceTree = "<group>"; };
 		05E80A1B20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EOCBlocksSupport.m"; sourceTree = "<group>"; };
+		05EB9DE820E644B100146965 /* UIView+WaterMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WaterMark.h"; sourceTree = "<group>"; };
+		05EB9DE920E644B100146965 /* UIView+WaterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WaterMark.m"; sourceTree = "<group>"; };
 		31ABAF8F5E89F82960C9D3C9 /* Pods_JHScreen_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHScreen_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C172E2095AEC7AAF17ABF74 /* Pods_JHScreen_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHScreen_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56409041F4F25B9C62F81D3B /* Pods-JHScreen_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHScreen_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHScreen_Example/Pods-JHScreen_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +118,8 @@
 		05E809FF20E5D0C30099B64B /* JHScreen */ = {
 			isa = PBXGroup;
 			children = (
+				05EB9DE820E644B100146965 /* UIView+WaterMark.h */,
+				05EB9DE920E644B100146965 /* UIView+WaterMark.m */,
 				05E80A0020E5D0C30099B64B /* Assets */,
 				05E80A0220E5D0C30099B64B /* Classes */,
 			);
@@ -131,7 +130,6 @@
 		05E80A0020E5D0C30099B64B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				05E80A0120E5D0C30099B64B /* .gitkeep */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -139,10 +137,8 @@
 		05E80A0220E5D0C30099B64B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				05E80A0320E5D0C30099B64B /* .gitkeep */,
 				05E80A1920E5D7F30099B64B /* QHBase */,
 				05E80A0420E5D0C30099B64B /* QHScreen */,
-				05E80A1020E5D0C30099B64B /* ReplaceMe.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -376,9 +372,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				05E80A1120E5D0C40099B64B /* .gitkeep in Resources */,
 				05E80A1720E5D0C40099B64B /* QHScreenCAPViewController.xib in Resources */,
-				05E80A1220E5D0C40099B64B /* .gitkeep in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -485,8 +479,8 @@
 				05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */,
 				6003F5A7195388D20070C39A /* JHViewController.m in Sources */,
 				05E80A1C20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m in Sources */,
-				05E80A1820E5D0C40099B64B /* ReplaceMe.m in Sources */,
 				05E80A1620E5D0C40099B64B /* QHScreenCAPViewController.m in Sources */,
+				05EB9DEA20E644B100146965 /* UIView+WaterMark.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */,
 			);
