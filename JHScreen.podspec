@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JHScreen'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = '在iOS中实现简单的录屏操作.'
 
 # This description is used to generate tags and improve search results.
