@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'JHScreen_Example' do
+  pod 'JHScreen', :path => '../'
+
+  target 'JHScreen_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+    pod 'Expecta'
+    pod 'FBSnapshotTestCase'
+    pod 'Expecta+Snapshots'
+  end
+end
