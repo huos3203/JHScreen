@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0515516120E9C80100142E24 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0515516020E9C80000142E24 /* UIImage+Util.m */; };
+		0554401620EA2908008F3AA7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0554401520EA2908008F3AA7 /* opencv2.framework */; };
+		0554403B20EA3845008F3AA7 /* JHQuickShotCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */; };
 		05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */; };
 		05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */; };
 		05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0C20E5D0C30099B64B /* QHContentViewController.m */; };
@@ -44,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0515515F20E9C80000142E24 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
+		0515516020E9C80000142E24 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
+		05543FE420EA2385008F3AA7 /* JHFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JHFoundation.framework; path = ../../../../Documents/build_dir/JHFoundation.framework; sourceTree = "<group>"; };
+		0554401520EA2908008F3AA7 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JHQuickShotCamera.mm; sourceTree = "<group>"; };
+		0554403A20EA3845008F3AA7 /* JHQuickShotCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHQuickShotCamera.h; sourceTree = "<group>"; };
 		05E80A0620E5D0C30099B64B /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 		05E80A0820E5D0C30099B64B /* QHScreenCAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPManager.h; sourceTree = "<group>"; };
@@ -97,6 +106,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				0554401620EA2908008F3AA7 /* opencv2.framework in Frameworks */,
 				3A40A5DE5987E1C35BD6130F /* Pods_JHScreen_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,9 +125,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05543FB120EA1337008F3AA7 /* QuickShot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QuickShot;
+			sourceTree = "<group>";
+		};
 		05E809FF20E5D0C30099B64B /* JHScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0515515F20E9C80000142E24 /* UIImage+Util.h */,
+				0515516020E9C80000142E24 /* UIImage+Util.m */,
 				05EB9DE820E644B100146965 /* UIView+WaterMark.h */,
 				05EB9DE920E644B100146965 /* UIView+WaterMark.m */,
 				05E80A0020E5D0C30099B64B /* Assets */,
@@ -137,6 +156,7 @@
 		05E80A0220E5D0C30099B64B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				05543FB120EA1337008F3AA7 /* QuickShot */,
 				05E80A1920E5D7F30099B64B /* QHBase */,
 				05E80A0420E5D0C30099B64B /* QHScreen */,
 			);
@@ -209,6 +229,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05543FE420EA2385008F3AA7 /* JHFoundation.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -222,6 +243,9 @@
 		6003F593195388D20070C39A /* Example for JHScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0554403A20EA3845008F3AA7 /* JHQuickShotCamera.h */,
+				0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */,
+				0554401520EA2908008F3AA7 /* opencv2.framework */,
 				6003F59C195388D20070C39A /* JHAppDelegate.h */,
 				6003F59D195388D20070C39A /* JHAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -478,9 +502,11 @@
 				05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */,
 				05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */,
 				6003F5A7195388D20070C39A /* JHViewController.m in Sources */,
+				0554403B20EA3845008F3AA7 /* JHQuickShotCamera.mm in Sources */,
 				05E80A1C20E5D7F30099B64B /* NSTimer+EOCBlocksSupport.m in Sources */,
 				05E80A1620E5D0C40099B64B /* QHScreenCAPViewController.m in Sources */,
 				05EB9DEA20E644B100146965 /* UIView+WaterMark.m in Sources */,
+				0515516120E9C80100142E24 /* UIImage+Util.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */,
 			);
@@ -611,9 +637,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2C4H9T5RF5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JHScreen/JHLivePlayLibrary",
+					"$(PROJECT_DIR)/JHScreen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHScreen/JHScreen-Prefix.pch";
 				INFOPLIST_FILE = "JHScreen/JHScreen-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JHScreen/JHLivePlayLibrary",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -627,9 +662,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2C4H9T5RF5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JHScreen/JHLivePlayLibrary",
+					"$(PROJECT_DIR)/JHScreen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JHScreen/JHScreen-Prefix.pch";
 				INFOPLIST_FILE = "JHScreen/JHScreen-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JHScreen/JHLivePlayLibrary",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

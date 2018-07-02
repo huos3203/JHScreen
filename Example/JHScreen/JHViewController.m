@@ -7,17 +7,28 @@
 //
 
 #import "JHViewController.h"
+#import "UIView+WaterMark.h"
+#import <AVFoundation/AVCaptureDevice.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface JHViewController ()
+#import "JHQuickShotCamera.h"
 
+@interface JHViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @end
 
 @implementation JHViewController
-
+{
+    UIImagePickerController *imagePicker;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+}
+- (IBAction)ibaCameraAction:(id)sender {
+    [[JHQuickShotCamera new] showCameraView:^(UIImage *image) {
+        [self.view addWatemarkText:@"2018-12-12" Photo:image];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
