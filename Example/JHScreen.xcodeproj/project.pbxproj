@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0515516120E9C80100142E24 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0515516020E9C80000142E24 /* UIImage+Util.m */; };
-		0554401620EA2908008F3AA7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0554401520EA2908008F3AA7 /* opencv2.framework */; };
 		0554403B20EA3845008F3AA7 /* JHQuickShotCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */; };
+		0554403D20EA4542008F3AA7 /* OpenCV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0554403C20EA4542008F3AA7 /* OpenCV2.framework */; };
 		05E80A1320E5D0C40099B64B /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */; };
 		05E80A1420E5D0C40099B64B /* QHScreenCAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0920E5D0C30099B64B /* QHScreenCAPManager.m */; };
 		05E80A1520E5D0C40099B64B /* QHContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E80A0C20E5D0C30099B64B /* QHContentViewController.m */; };
@@ -50,9 +50,9 @@
 		0515515F20E9C80000142E24 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
 		0515516020E9C80000142E24 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
 		05543FE420EA2385008F3AA7 /* JHFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JHFoundation.framework; path = ../../../../Documents/build_dir/JHFoundation.framework; sourceTree = "<group>"; };
-		0554401520EA2908008F3AA7 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JHQuickShotCamera.mm; sourceTree = "<group>"; };
 		0554403A20EA3845008F3AA7 /* JHQuickShotCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHQuickShotCamera.h; sourceTree = "<group>"; };
+		0554403C20EA4542008F3AA7 /* OpenCV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV2.framework; path = "../../../../../Downloads/OpenCV2Framework-master/OpenCV2.framework"; sourceTree = "<group>"; };
 		05E80A0620E5D0C30099B64B /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
 		05E80A0720E5D0C30099B64B /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 		05E80A0820E5D0C30099B64B /* QHScreenCAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHScreenCAPManager.h; sourceTree = "<group>"; };
@@ -103,10 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0554403D20EA4542008F3AA7 /* OpenCV2.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				0554401620EA2908008F3AA7 /* opencv2.framework in Frameworks */,
 				3A40A5DE5987E1C35BD6130F /* Pods_JHScreen_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,9 +243,9 @@
 		6003F593195388D20070C39A /* Example for JHScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0554403C20EA4542008F3AA7 /* OpenCV2.framework */,
 				0554403A20EA3845008F3AA7 /* JHQuickShotCamera.h */,
 				0554403920EA3842008F3AA7 /* JHQuickShotCamera.mm */,
-				0554401520EA2908008F3AA7 /* opencv2.framework */,
 				6003F59C195388D20070C39A /* JHAppDelegate.h */,
 				6003F59D195388D20070C39A /* JHAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
